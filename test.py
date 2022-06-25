@@ -1,21 +1,3 @@
-# import streamlit as st
-# st.title("Streamlit Totorial")
-# st.title("#Explore Different classifiers")
-# st.write("""
-# #Explore Different classifiers
-# Which one is best?
-# Hello Shubham How are you?
-# """)
-# dataset_name=st.selectbox("Select DATASET",["iris","wine","breast_cancer"])
-# classifier_name=st.selectbox("Select Classifier",["Logistic Regression","Desicion Tree","Random Forest"])
-# # print(dataset_name)
-# # print(classifier_name)
-# def get_dataset(dataset_name):
-#     if dataset_name=="iris":
-#         data=dataset.load_iris()
-#     elif dataset_name=="iris":
-#         data=datasets.load_iris()    
-from re import A
 import streamlit as st
 from sklearn import datasets
 from sklearn.linear_model import LogisticRegression
@@ -50,22 +32,9 @@ def get_dataset(data_name):
   return X, y
 
 X, y = get_dataset(dataset_name)
-# print("X ",X.shape)
-# print("y ",y.shape)
 
 st.write("Shape of the dataset: ", X.shape)
 st.write("Shape of the target: ", y.shape)
-# A = data.data
-#   b = data.target
-
-#   return X, y
-
-# X, y = get_dataset(dataset_name)
-# # print("X ",X.shape)
-# # print("y ",y.shape)
-
-# st.write("Shape of the dataset: ", X.shape)
-# st.write("Shape of the target: ", y.shape)
 
 def add_perimeter_ui(clf_name):
   params = dict()
@@ -103,7 +72,7 @@ acc = accuracy_score(y_test, y_pred)
 st.write("Classifier ", classifier_name)
 st.write("Accuracy: ", acc)
 
-# # PLOT
+# PLOT
 pca = PCA(2)
 x_pojected = pca.fit_transform(X)
 
@@ -117,5 +86,3 @@ plt.ylabel("Principal Component 2")
 
 plt.colorbar()
 st.pyplot(plt)
-
-
